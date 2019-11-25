@@ -13,5 +13,6 @@ public interface LibraryUser_Dao {
 	boolean remove(int id);
 	List<LibraryUser> findAll ();
 	LibraryUser update_LibraryUser(int id,LibraryUser update);
+	LibraryUser findBy_Email(String email);
 
 }

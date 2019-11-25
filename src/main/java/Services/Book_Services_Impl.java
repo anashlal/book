@@ -1,6 +1,6 @@
 package Services;
 
-import java.math.BigDecimal;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +54,24 @@ public class Book_Services_Impl implements Book_Dao{
 		orginal.setFinePerDay(update.getFinePerDay());
 		orginal.setDescription(update.getDescription());
 		return book_repo.save(orginal);
+	}
+
+	@Override
+	public Book findBytitle(String title) {
+		
+		return book_repo.findBytitle(title);
+	}
+
+	@Override
+	public Book findByavailable(boolean Isavailable) {
+		
+		return book_repo.findByavailable(Isavailable);
+	}
+
+	@Override
+	public Book findByreserved(boolean Isreserved) {
+		
+		return book_repo.findByreserved(Isreserved);
 	}
 
 }

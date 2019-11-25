@@ -59,4 +59,11 @@ public class LibrareUser_Impl implements LibraryUser_Dao {
 
 		return libraryuser_rep.save(orginal);
 	}
+
+
+	@Override
+	public LibraryUser findBy_Email(String email) {
+
+		return libraryuser_rep.findByEmail(email);
+	}
 }

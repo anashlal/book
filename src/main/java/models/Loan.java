@@ -26,14 +26,18 @@ public class Loan {
 
 	})
 	private Book Book;
-
+	private LibraryUser libraryUser;
 	private LocalDate LoanDate;
 	private boolean terminated;
 
-	public Loan(LibraryUser loanTaker, Book book, LocalDate loanDate, boolean terminated) {
+
+
+	public Loan(LibraryUser loanTaker, models.Book book, LibraryUser libraryUser, LocalDate loanDate,
+			boolean terminated) {
 		super();
 		this.loanTaker = loanTaker;
 		Book = book;
+		this.libraryUser = libraryUser;
 		LoanDate = loanDate;
 		this.terminated = terminated;
 	}
@@ -104,6 +108,7 @@ public class Loan {
 		int result = 1;
 		result = prime * result + ((Book == null) ? 0 : Book.hashCode());
 		result = prime * result + ((LoanDate == null) ? 0 : LoanDate.hashCode());
+		result = prime * result + ((libraryUser == null) ? 0 : libraryUser.hashCode());
 		result = prime * result + (int) (loanId ^ (loanId >>> 32));
 		result = prime * result + ((loanTaker == null) ? 0 : loanTaker.hashCode());
 		result = prime * result + (terminated ? 1231 : 1237);
@@ -129,6 +134,11 @@ public class Loan {
 				return false;
 		} else if (!LoanDate.equals(other.LoanDate))
 			return false;
+		if (libraryUser == null) {
+			if (other.libraryUser != null)
+				return false;
+		} else if (!libraryUser.equals(other.libraryUser))
+			return false;
 		if (loanId != other.loanId)
 			return false;
 		if (loanTaker == null) {
@@ -143,19 +153,10 @@ public class Loan {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Loan [loanId=");
-		builder.append(loanId);
-		builder.append(", loanTaker=");
-		builder.append(loanTaker);
-		builder.append(", Book=");
-		builder.append(Book);
-		builder.append(", LoanDate=");
-		builder.append(LoanDate);
-		builder.append(", terminated=");
-		builder.append(terminated);
-		builder.append("]");
-		return builder.toString();
+		return "Loan [loanId=" + loanId + ", loanTaker=" + loanTaker + ", Book=" + Book + ", libraryUser=" + libraryUser
+				+ ", LoanDate=" + LoanDate + ", terminated=" + terminated + "]";
 	}
+
+	
 
 }
