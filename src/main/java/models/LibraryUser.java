@@ -3,14 +3,12 @@ package models;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.Email;
 
-import org.hibernate.annotations.GeneratorType;
+import javax.validation.constraints.Email;
 
 @Entity
 public class LibraryUser {
@@ -21,10 +19,10 @@ public class LibraryUser {
 
 	private LocalDate regDate;
 	private String name;
-	
+
 	@Email
 	private String email;
-	
+
 	public int getUserId() {
 		return userId;
 	}
@@ -112,11 +110,9 @@ public class LibraryUser {
 		return true;
 	}
 
-
 	@Override
 	public String toString() {
 		return "LibraryUser [userId=" + userId + ", regDate=" + regDate + ", name=" + name + ", email=" + email + "]";
 	}
-
 
 }

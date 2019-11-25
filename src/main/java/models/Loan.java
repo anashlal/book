@@ -30,8 +30,6 @@ public class Loan {
 	private LocalDate LoanDate;
 	private boolean terminated;
 
-
-
 	public Loan(LibraryUser loanTaker, models.Book book, LibraryUser libraryUser, LocalDate loanDate,
 			boolean terminated) {
 		super();
@@ -156,7 +154,5 @@ public class Loan {
 		return "Loan [loanId=" + loanId + ", loanTaker=" + loanTaker + ", Book=" + Book + ", libraryUser=" + libraryUser
 				+ ", LoanDate=" + LoanDate + ", terminated=" + terminated + "]";
 	}
-
-	
 
 }
