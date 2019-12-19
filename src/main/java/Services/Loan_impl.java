@@ -3,28 +3,34 @@ package Services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import models.Book;
 import models.LibraryUser;
 import models.Loan;
 
 import repo.Loan_Repo;
-
+@Service
+@Transactional
 public class Loan_impl implements Loan_Dao {
-
+	
+	
 	private Loan_Repo loan_repo;
 
+	
 	@Autowired
+	public Loan_impl(Loan_Repo loan_repo) {
+		super();
+		this.loan_repo = loan_repo;
+	}
+
 
 	@Override
 	public Loan findById_Loan(int id) {
 		return loan_repo.findById(id).orElseThrow(IllegalArgumentException::new);
 	}
 
-	public Loan_impl(Loan_Repo loan_repo) {
-		super();
-		this.loan_repo = loan_repo;
-	}
 
 	@Override
 	public Loan save_Loan(Loan loan) {

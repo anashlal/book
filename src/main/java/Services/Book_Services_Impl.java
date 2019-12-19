@@ -3,10 +3,13 @@ package Services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import models.Book;
 import repo.Book_Repo;
-
+@Service
+@Transactional
 public class Book_Services_Impl implements Book_Dao {
 
 	private Book_Repo book_repo;

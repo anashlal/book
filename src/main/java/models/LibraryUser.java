@@ -11,15 +11,14 @@ import javax.persistence.Id;
 import javax.validation.constraints.Email;
 
 @Entity
+
 public class LibraryUser {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
-
 	private LocalDate regDate;
 	private String name;
-
 	@Email
 	private String email;
 
@@ -68,6 +67,10 @@ public class LibraryUser {
 		this.regDate = regDate;
 		this.name = name;
 		this.email = email;
+	}
+	
+	public LibraryUser() {
+
 	}
 
 	@Override

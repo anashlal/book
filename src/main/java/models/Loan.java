@@ -39,6 +39,9 @@ public class Loan {
 		LoanDate = loanDate;
 		this.terminated = terminated;
 	}
+	public Loan() {
+
+	}
 
 	public long getLoanId() {
 		return loanId;

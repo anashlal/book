@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+
 public class Book {
 
 	@Id
@@ -21,6 +22,19 @@ public class Book {
 	private int maxLoanDays;
 	private BigDecimal finePerDay;
 	private String description;
+
+	
+	public Book(String title, int maxLoanDays, BigDecimal finePerDay, String description) {
+		super();
+		this.title = title;
+		this.maxLoanDays = maxLoanDays;
+		this.finePerDay = finePerDay;
+		this.description = description;
+	}
+
+	public Book() {
+
+	}
 
 	public int getBookId() {
 		return bookId;
@@ -78,38 +92,7 @@ public class Book {
 		this.description = description;
 	}
 
-	public Book(String title, int maxLoanDays, BigDecimal finePerDay, String description) {
-		super();
-		this.title = title;
-		this.maxLoanDays = maxLoanDays;
-		this.finePerDay = finePerDay;
-		this.description = description;
-	}
 
-	public Book(int bookId, String title, boolean available, boolean reserved, int maxLoanDays, BigDecimal finePerDay,
-			String description) {
-		super();
-		this.bookId = bookId;
-		this.title = title;
-		this.available = available;
-		this.reserved = reserved;
-		this.maxLoanDays = maxLoanDays;
-		this.finePerDay = finePerDay;
-		this.description = description;
-	}
-
-	public Book(boolean available, boolean reserved) {
-		super();
-		this.available = available;
-		this.reserved = reserved;
-	}
-
-	public Book(int bookId, String title, String description) {
-		super();
-		this.bookId = bookId;
-		this.title = title;
-		this.description = description;
-	}
 
 	@Override
 	public String toString() {
