@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-
 public class Loan {
 
 	@Id
@@ -39,6 +38,7 @@ public class Loan {
 		LoanDate = loanDate;
 		this.terminated = terminated;
 	}
+
 	public Loan() {
 
 	}

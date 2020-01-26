@@ -2,11 +2,15 @@ package models;
 
 import java.math.BigDecimal;
 
+import javax.annotation.sql.DataSourceDefinition;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.Columns;
 
 @Entity
 
@@ -14,7 +18,7 @@ public class Book {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
+	@Column(name="id")
 	private int bookId;
 	private String title;
 	private boolean available;
@@ -23,7 +27,6 @@ public class Book {
 	private BigDecimal finePerDay;
 	private String description;
 
-	
 	public Book(String title, int maxLoanDays, BigDecimal finePerDay, String description) {
 		super();
 		this.title = title;
@@ -91,8 +94,6 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-
 
 	@Override
 	public String toString() {

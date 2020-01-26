@@ -3,8 +3,6 @@
  */
 package se.lexicon.anas.booklender.test2Servrit;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -12,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author Anas
+ * @author
  *
  */
 class ServicesTest {
@@ -50,7 +48,7 @@ class ServicesTest {
 	 */
 	@Test
 	void testFindById_Loan() {
-	
+
 	}
 
 	/**
@@ -58,7 +56,7 @@ class ServicesTest {
 	 */
 	@Test
 	void testLoan_impl() {
-	
+
 	}
 
 	/**
@@ -66,7 +64,7 @@ class ServicesTest {
 	 */
 	@Test
 	void testSave_Loan() {
-	
+
 	}
 
 	/**
@@ -74,7 +72,7 @@ class ServicesTest {
 	 */
 	@Test
 	void testRemove() {
-		
+
 	}
 
 	/**
@@ -82,7 +80,7 @@ class ServicesTest {
 	 */
 	@Test
 	void testFindAll() {
-	
+
 	}
 
 	/**
@@ -90,15 +88,16 @@ class ServicesTest {
 	 */
 	@Test
 	void testUpdate_Loan() {
-	
+
 	}
 
 	/**
-	 * Test method for {@link Services.Loan_impl#findByLibraryUser(models.LibraryUser)}.
+	 * Test method for
+	 * {@link Services.Loan_impl#findByLibraryUser(models.LibraryUser)}.
 	 */
 	@Test
 	void testFindByLibraryUser() {
-		
+
 	}
 
 	/**
@@ -106,15 +105,16 @@ class ServicesTest {
 	 */
 	@Test
 	void testFindByBook() {
-	
+
 	}
 
 	/**
-	 * Test method for {@link Services.Loan_impl#findByterminated(java.lang.Boolean)}.
+	 * Test method for
+	 * {@link Services.Loan_impl#findByterminated(java.lang.Boolean)}.
 	 */
 	@Test
 	void testFindByterminated() {
-		
+
 	}
 
 }

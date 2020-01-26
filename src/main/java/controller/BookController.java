@@ -20,7 +20,7 @@ import models.LibraryUser;
 @RestController
 @RequestMapping("/myapp/api")
 public class BookController {
-	
+
 	private Book_Dao bookservaice;
 
 	@Autowired
@@ -28,7 +28,7 @@ public class BookController {
 		super();
 		this.bookservaice = bookservaice;
 	}
-	
+
 	@GetMapping("/allbook/{id}")
 	public ResponseEntity<Book> book_By_Id(@PathVariable int id) {
 		try {
@@ -39,8 +39,8 @@ public class BookController {
 	}
 
 	@GetMapping("/allbook")
-	public ResponseEntity<List<Book>> book_all (){
-		List<Book> books= bookservaice.findAll();
+	public ResponseEntity<List<Book>> book_all() {
+		List<Book> books = bookservaice.findAll();
 
 		if (books.isEmpty()) {
 			return ResponseEntity.noContent().build();
@@ -48,7 +48,7 @@ public class BookController {
 			return ResponseEntity.ok(books);
 		}
 	}
-	
+
 	@PostMapping("/Creatbook")
 	public ResponseEntity<Book> create_book(@RequestBody Book newbook) {
 		if (newbook == null) {
@@ -59,10 +59,9 @@ public class BookController {
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(saved);
 	}
-	
+
 	@PutMapping("/updatebook/{id}")
-	public ResponseEntity<Book> update_book(@PathVariable int id,
-			@RequestBody Book updated) {
+	public ResponseEntity<Book> update_book(@PathVariable int id, @RequestBody Book updated) {
 		if (updated == null) {
 			return ResponseEntity.badRequest().build();
 		}
@@ -72,6 +71,7 @@ public class BookController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+
 	@GetMapping("/allbook/{title}")
 	public ResponseEntity<Book> book_By_title(@PathVariable String title) {
 		try {
@@ -80,7 +80,7 @@ public class BookController {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
+
 	@GetMapping("/allbook/{available}")
 	public ResponseEntity<Book> book_By_available(@PathVariable Boolean available) {
 		try {
@@ -89,7 +89,7 @@ public class BookController {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
+
 	@GetMapping("/allbook/{reserved}")
 	public ResponseEntity<Book> book_By_reserved(@PathVariable Boolean reserved) {
 		try {
@@ -98,6 +98,5 @@ public class BookController {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
 
 }

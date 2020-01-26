@@ -20,7 +20,7 @@ import models.Loan;
 @RestController
 @RequestMapping("/myapp/api")
 public class LoanControlle {
-	
+
 	private Loan_Dao loanServaice;
 
 	@Autowired
@@ -28,8 +28,7 @@ public class LoanControlle {
 		super();
 		this.loanServaice = loanServaice;
 	}
-	
-	
+
 	@GetMapping("/allloan/{id}")
 	public ResponseEntity<Loan> loan_By_Id(@PathVariable int id) {
 		try {
@@ -38,10 +37,9 @@ public class LoanControlle {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
 
 	@GetMapping("/allloan")
-	public ResponseEntity<List<Loan>> loan_all (){
+	public ResponseEntity<List<Loan>> loan_all() {
 		List<Loan> loans = loanServaice.findAll();
 
 		if (loans.isEmpty()) {
@@ -50,21 +48,20 @@ public class LoanControlle {
 			return ResponseEntity.ok(loans);
 		}
 	}
-	
+
 	@PostMapping("/Creatloan")
 	public ResponseEntity<Loan> create_loan(@RequestBody Loan newloan) {
 		if (newloan == null) {
 			return ResponseEntity.badRequest().build();
 		}
 
-		Loan  saved = loanServaice.save_Loan(newloan);
+		Loan saved = loanServaice.save_Loan(newloan);
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(saved);
 	}
-	
+
 	@PutMapping("/updateallloan/{id}")
-	public ResponseEntity<Loan> update_loan(@PathVariable int id,
-			@RequestBody Loan updated) {
+	public ResponseEntity<Loan> update_loan(@PathVariable int id, @RequestBody Loan updated) {
 		if (updated == null) {
 			return ResponseEntity.badRequest().build();
 		}
@@ -74,6 +71,5 @@ public class LoanControlle {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
-	
+
 }

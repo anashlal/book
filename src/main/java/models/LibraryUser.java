@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.validation.constraints.Email;
 
 @Entity
-
 public class LibraryUser {
 
 	@Id
@@ -68,7 +67,7 @@ public class LibraryUser {
 		this.name = name;
 		this.email = email;
 	}
-	
+
 	public LibraryUser() {
 
 	}

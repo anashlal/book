@@ -19,8 +19,9 @@ public interface Loan_Dao {
 	Loan update_Loan(int id, Loan update);
 
 	Loan findByLibraryUser(LibraryUser user);
-	Loan findByBook(Book book);
-	Loan findByterminated(Boolean Isterminated);
 
+	Loan findByBook(Book book);
+
+	Loan findByterminated(Boolean Isterminated);
 
 }

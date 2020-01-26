@@ -1,10 +1,8 @@
 package se.lexicon.anas.booklender;
 
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import Services.Book_Dao;
 
@@ -18,7 +16,6 @@ import repo.LibraryUser_Repo;
 import repo.Loan_Repo;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 
 @Component
 @Transactional(rollbackFor = Exception.class)
@@ -60,7 +57,7 @@ public class TestCommandLine implements CommandLineRunner {
 		TestBook = bookrepo.save(book2);
 		TestLibrare = librarerepo.save(librare);
 		TestLoan = loanrepo.save(loan2);
-		
+
 		System.out.println(TestLibrare);
 		System.out.println(TestLoan);
 		System.out.println(TestBook);
